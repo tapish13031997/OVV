@@ -20,3 +20,10 @@ lwptr =new login_window(this);
 lwptr->showMaximized();
 
 }
+
+void first_window::on_register_button_clicked()
+{
+    hide();
+    vfptr=new voter_form(this);
+    vfptr->showMaximized();
+}

@@ -15,6 +15,9 @@ public:
     explicit voter_form(QWidget *parent = 0);
     ~voter_form();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::voter_form *ui;
 };

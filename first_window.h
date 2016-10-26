@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <login_window.h>
+#include <voter_form.h>
 namespace Ui {
 class first_window;
 }
@@ -18,9 +19,12 @@ public:
 private slots:
     void on_login_button_clicked();
 
+    void on_register_button_clicked();
+
 private:
     Ui::first_window *ui;
     login_window * lwptr;
+    voter_form *vfptr;
 
 };
 

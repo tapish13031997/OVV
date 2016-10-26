@@ -12,3 +12,8 @@ voter_form::~voter_form()
 {
     delete ui;
 }
+
+void voter_form::on_pushButton_2_clicked()          //cancel push button
+{
+
+}

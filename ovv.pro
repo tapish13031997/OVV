@@ -17,18 +17,21 @@ SOURCES += main.cpp\
     first_window.cpp \
     login_window.cpp \
     voter_window.cpp \
-    area.cpp
+    area.cpp \
+    voter_form.cpp
 
 HEADERS  += mainwindow1.h \
     first_window.h \
     login_window.h \
     voter_window.h \
-    area.h
+    area.h \
+    voter_form.h
 
 FORMS    += mainwindow1.ui \
     first_window.ui \
     login_window.ui \
-    voter_window.ui
+    voter_window.ui \
+    voter_form.ui
 
 RESOURCES += \
     src/files.qrc
