@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
++=sql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = ovv
@@ -25,7 +25,8 @@ HEADERS  += mainwindow1.h \
     login_window.h \
     voter_window.h \
     area.h \
-    voter_form.h
+    voter_form.h \
+    initdb.h
 
 FORMS    += mainwindow1.ui \
     first_window.ui \
