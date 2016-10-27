@@ -1,4 +1,4 @@
-#include "login_window.h"
+#include <first_window.h>
 #include "ui_login_window.h"
 #include <QMessageBox>
 login_window::login_window(QWidget *parent) :
@@ -53,3 +53,12 @@ void login_window::on_login_button_clicked()
 }
 
 
+
+void login_window::on_commandLinkButton_clicked()
+{
+
+    first_window * fwptr;
+    fwptr=new first_window(this);
+        hide();
+        fwptr->showMaximized();
+}

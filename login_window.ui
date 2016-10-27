@@ -91,6 +91,19 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>120</y>
+      <width>174</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>GO BACK</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
