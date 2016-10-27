@@ -1,4 +1,6 @@
+
 #include <QApplication>
+#include "area.h"
 #include "mainwindow1.h"
 int main(int argc, char *argv[])
 {
