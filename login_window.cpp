@@ -1,6 +1,7 @@
 #include <first_window.h>
 #include "ui_login_window.h"
 #include <QMessageBox>
+#include "initdb.h"
 login_window::login_window(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::login_window)
@@ -15,20 +16,32 @@ login_window::~login_window()
 
 bool login_window::check(const QString &username,const QString &password)
 {
-    if(username=="T"&&password=="S")
+QSqlQuery query;
+query.prepare("select * from voter");
+query.exec();
+while(query.next())
+{
+if(query.value(1).toString()==username && query.value(2).toString()==password)
+{
     return true;
+}
+}
+return false;
 }
 int login_window::login()
 {
-    QString username,password;
-    vptr=new voter_window(this);
+
 
     username=ui->Username_lineEdit->text();
     password=ui->password_lineEdit->text();
+     //QMessageBox messageBox;
+    //messageBox.critical(0,"Error",username);
     if(check(username,password))
     {
          hide();
-        vptr->showMaximized();
+         name=username;
+         vptr=new voter_window(this);
+         vptr->showMaximized();
         return 1;
 
     }

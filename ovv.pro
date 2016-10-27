@@ -17,13 +17,22 @@ SOURCES += main.cpp\
     first_window.cpp \
     login_window.cpp \
     voter_window.cpp \
+    candidate.cpp \
+    area.cpp \
+    voter.cpp \
+    voter_form.cpp
+
     voter_form.cpp
 
 HEADERS  += mainwindow1.h \
     first_window.h \
     login_window.h \
     voter_window.h \
-    voter_form.h
+    voter_form.h \
+    area.h \
+    candidate.h \
+    initdb.h \
+    voter.h
 
 FORMS    += mainwindow1.ui \
     first_window.ui \

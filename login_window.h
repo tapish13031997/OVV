@@ -2,7 +2,8 @@
 #define LOGIN_WINDOW_H
 
 #include <QMainWindow>
-#include <voter_window.h>
+#include "voter_window.h"
+extern QString name;
 namespace Ui {
 class login_window;
 }
@@ -15,6 +16,7 @@ public:
     explicit login_window(QWidget *parent = 0);
     bool check(const QString &username,const QString &password);
     int login();
+    QString username,password;
     ~login_window();
 
 private slots:

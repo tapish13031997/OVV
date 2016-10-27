@@ -15,8 +15,12 @@ public:
     explicit voter_window(QWidget *parent = 0);
     ~voter_window();
 
+private slots:
+    void on_commandLinkButton_clicked();
 private:
     Ui::voter_window *ui;
+    voter_window * vwptr;
+    //vwptr=new voter_window(this);
 };
 
 #endif // VOTER_WINDOW_H

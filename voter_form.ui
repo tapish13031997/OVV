@@ -304,6 +304,19 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>name</tabstop>
+  <tabstop>username</tabstop>
+  <tabstop>password</tabstop>
+  <tabstop>repassword</tabstop>
+  <tabstop>Male</tabstop>
+  <tabstop>Female</tabstop>
+  <tabstop>DOB</tabstop>
+  <tabstop>phone</tabstop>
+  <tabstop>area</tabstop>
+  <tabstop>submit</tabstop>
+  <tabstop>cancel</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

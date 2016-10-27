@@ -94,6 +94,7 @@ void voter_form::on_submit_clicked()
     v.Uid=query.value(0).toInt()+1;
 
     v.insert_voter();
+  //  qDebug()<<v.Uid<<' '<<v.username<<' '<<v.password<<' '<<v.phone<<' '<<v.name<<endl;
 
     QString S;
     S="Registration Successful\n";
@@ -106,7 +107,7 @@ void voter_form::on_submit_clicked()
 
     first_window *jt;
     jt=new first_window(this);
-    jt->showFullScreen();
+    jt->showMaximized();
 
     //qDebug()<<query.lastError();
 }
@@ -116,5 +117,5 @@ void voter_form::on_cancel_clicked()
     hide();
     first_window *jt;
     jt=new first_window(this);
-    jt->showFullScreen();
+    jt->showMaximized();
 }

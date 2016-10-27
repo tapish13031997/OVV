@@ -17,7 +17,7 @@ void first_window::on_login_button_clicked()
 {
 
 lwptr =new login_window(this);
-lwptr->showFullScreen();
+lwptr->showMaximized();
 
 }
 
@@ -25,5 +25,5 @@ void first_window::on_register_button_clicked()
 {
   hide();
 vfptr=new voter_form(this);
-vfptr->showFullScreen();
+vfptr->showMaximized();
 }
