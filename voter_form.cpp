@@ -3,6 +3,7 @@
 #include "voter.h"
 #include "initdb.h"
 #include "first_window.h"
+#include "QMessageBox"
 voter_form::voter_form(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::voter_form)
@@ -33,10 +34,20 @@ void voter_form::on_submit_clicked()
 {
     voter v;
 
-    v.name=ui->name->text();
-    v.username=ui->username->text();
     v.password=ui->password->text();
+
     QString repassword=ui->repassword->text();
+
+    if(v.password!=repassword)
+    {QMessageBox::information(this,"WARNING","Passwords do not match"); return;}
+
+    v.name=ui->name->text();
+
+    v.username=ui->username->text();
+
+
+
+
 
     if(ui->Male->isChecked())
         v.sex="M";
@@ -47,9 +58,15 @@ void voter_form::on_submit_clicked()
     temp=ui->area->currentText();
 
     QSqlQuery query;
+
     query.prepare("select areacode from area where areaname =:val");
     query.bindValue(":val",temp);
 
+
+   if(!query.exec())
+    qDebug()<<query.lastError();
+
+    query.first();
     v.areacode=query.value(0).toInt();
 
     v.phone=ui->phone->text();
@@ -66,18 +83,32 @@ void voter_form::on_submit_clicked()
     v.DOB+='-';
     v.DOB+=QString::number(x);
 
-    qDebug()<<query.lastError();
 
 
 
-    query.exec("select max(Uid) from voter");
-    v.Uid=query.value(0).toInt();
+
+    if(!query.exec("select max(Uid) from voter"))
+        qDebug()<<query.lastError();
+
+    query.first();
+    v.Uid=query.value(0).toInt()+1;
+
+    v.insert_voter();
+
+    QString S;
+    S="Registration Successful\n";
+    S+="Your UID is ";
+    S+=QString::number(v.Uid);
+    S+="\nKindly keep this safe for future references";
+    QMessageBox::information(this,"SUCCESSFULL",S);
 
     hide();
-    it=new voter_window;
-    it->showMaximized();
 
-    qDebug()<<query.lastError();
+    first_window *jt;
+    jt=new first_window(this);
+    jt->showFullScreen();
+
+    //qDebug()<<query.lastError();
 }
 
 void voter_form::on_cancel_clicked()
@@ -85,5 +116,5 @@ void voter_form::on_cancel_clicked()
     hide();
     first_window *jt;
     jt=new first_window(this);
-    jt->showMaximized();
+    jt->showFullScreen();
 }
