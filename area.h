@@ -5,7 +5,6 @@
 class area
 {
     public:
-    long long Uid;
 
     int areacode;
     int population;
