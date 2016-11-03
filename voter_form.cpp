@@ -119,3 +119,33 @@ void voter_form::on_cancel_clicked()
     jt=new first_window(this);
     jt->showMaximized();
 }
+void voter_form::voter_edit(int uid)
+{
+    QSqlQuery query,query2;
+
+    query.prepare("select * from voter where uid =:val");
+    query.bindValue(":val",uid);
+if(!query.exec())
+{
+       QMessageBox::information(this,"UNSUCCESSFULL","");
+}
+query.first();
+ui->username->setText(query.value(1).toString());
+ui->password->setText(query.value(2).toString());
+ui->name->setText(query.value(3).toString());
+ui->repassword->setText(query.value(2).toString());
+ui->password->setEchoMode(QLineEdit::Normal);
+ui->repassword->setEchoMode(QLineEdit::Normal);
+//ui->DOB;
+ui->phone->setText(query.value(7).toString());
+ui->username->setText(query.value(1).toString());
+        query2.prepare("select areaname from area where areacode =:val");
+        query2.bindValue(":val",query.value(4).toInt());
+        query2.exec();
+        query2.first();
+        ui->area->setCurrentText(query2.value(0).toString());
+
+query2.clear();
+query2.prepare("delete from voter where uid =:val");
+query2.bindValue(":val",uid);
+}

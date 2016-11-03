@@ -14,6 +14,8 @@ class voter_form : public QMainWindow
 
 public:
     explicit voter_form(QWidget *parent = 0);
+
+    void voter_edit(int uid);
     ~voter_form();
 
 private slots:
@@ -24,6 +26,7 @@ private slots:
 private:
     Ui::voter_form *ui;
     voter_window *it;
+    voter_form *vfptr;
     //first_window *jt;
 
 };
