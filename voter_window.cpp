@@ -44,3 +44,8 @@ void voter_window::on_commandLinkButton_clicked()
     fwptr=new first_window(this);
     fwptr->showMaximized();
 }
+
+void voter_window::on_pushButton_clicked()
+{
+
+}
