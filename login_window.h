@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "voter_window.h"
+#include "admin.h"
 extern QString name;
 namespace Ui {
 class login_window;
@@ -29,6 +30,7 @@ private:
     Ui::login_window *ui;
     login_window *uii;
     voter_window * vptr;
+    admin * aptr;
 };
 
 #endif // LOGIN_WINDOW_H
