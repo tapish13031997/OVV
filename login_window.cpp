@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include "initdb.h"
 #include "admin.h"
+#include <QDebug>
 login_window::login_window(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::login_window)
@@ -32,7 +33,9 @@ bool login_window::check(const QString &username,const QString &password)
     {
     if(query.value(1).toString()==username && query.value(2).toString()==password)
     {
+         //qDebug()<<"JJJJ";
         return true;
+
     }
 }
 return false;
@@ -48,7 +51,7 @@ int login_window::login()
     if(check(username,password))
     {
          hide();
-         name=username;
+          name=username;
          if(username=="ADMIN")
          {
           aptr=new admin(this);

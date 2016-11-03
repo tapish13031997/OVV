@@ -5,6 +5,7 @@
 #include "voter_window.h"
 #include "admin.h"
 extern QString name;
+
 namespace Ui {
 class login_window;
 }
