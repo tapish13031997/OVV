@@ -5,14 +5,14 @@
 class voter
 {
 public:
-   int Uid;
-   QString username;
-   QString password;
-   QString name;
-   int areacode;
-   QString sex;
-   QString DOB;
-   QString phone;
+   int Uid;//0
+   QString username;//1
+   QString password;//2
+   QString name;//3
+   int areacode;//4
+   QString sex;//5
+   QString DOB;//6
+   QString phone;//7
 
    void insert_voter();
 

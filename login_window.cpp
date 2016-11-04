@@ -3,8 +3,9 @@
 #include <QMessageBox>
 #include "initdb.h"
 #include "admin.h"
-#include "voter_window.h"
 #include "login_window.h"
+#include "voter_welcome_window.h"
+QString name;
 login_window::login_window(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::login_window)
@@ -57,9 +58,10 @@ int login_window::login()
          }
          else
          {
-            voter_window * vptr;
-         vptr=new voter_window(this);
-         vptr->showMaximized();
+             hide();
+            voter_welcome_window * vwwptr;
+         vwwptr=new voter_welcome_window(this);
+         vwwptr->showMaximized();
         }
                 return 1;
 

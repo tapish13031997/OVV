@@ -4,6 +4,8 @@
 #include "first_window.h"
 #include "manage_candidate.h"
 #include "manage_voter.h"
+#include "manage_parties.h"
+#include "manage_area.h"
 int flag;
 admin::admin(QWidget *parent) :
     QDialog(parent),
@@ -54,4 +56,21 @@ void admin::on_candidates_clicked()
        it->showMaximized();
 
 
+}
+
+void admin::on_areas_2_clicked()
+{
+    hide();
+        manage_parties *mpptr;
+        mpptr=new manage_parties(this);
+        mpptr->showFullScreen();
+
+}
+
+void admin::on_areas_clicked()
+{
+    hide();
+        manage_area *maptr;
+        maptr=new manage_area(this);
+maptr->showFullScreen();
 }

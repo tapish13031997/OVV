@@ -26,7 +26,7 @@ manage_area::manage_area(QWidget *parent) :
             QString temp=query.value(0).toString();
             ui->areacode->addItem(temp);
 
-             temp=query.value(1).toString();
+             temp=query.value(2).toString();
             ui->area_list->addItem(temp);
 
 
@@ -50,7 +50,7 @@ void manage_area::on_delete_area_clicked()
     QListWidgetItem *it= ui->area_list->currentItem();
 
     QString t=it->text();
-
+    QMessageBox info;
 
     QMessageBox::StandardButton reply;
 
@@ -61,20 +61,20 @@ void manage_area::on_delete_area_clicked()
     if(reply== QMessageBox::Yes)
     {
 
-    QSqlQuery query;
+            QSqlQuery query;
 
-    query.prepare("delete from area where areaname = :val1");
+            query.prepare("delete from area where areaname = :val1");
 
-    query.bindValue(":val1",t);
+            query.bindValue(":val1",t);
 
-    query.exec();
+            query.exec();
 
-    hide();
+            hide();
 
-    manage_area *iti;
-    iti = new manage_area;
-    iti->showMaximized();
-}
+            manage_area *iti;
+            iti = new manage_area;
+            iti->showMaximized();
+        }
 }
 
 void manage_area::on_back_clicked()

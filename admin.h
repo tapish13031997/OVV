@@ -21,6 +21,10 @@ private slots:
 void on_voters_clicked();
     void on_commandLinkButton_clicked();
 
+    void on_areas_2_clicked();
+
+    void on_areas_clicked();
+
 private:
     Ui::admin *ui;
 };

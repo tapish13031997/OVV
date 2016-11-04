@@ -43,7 +43,7 @@ void add_party::on_submit_clicked()
 
     if(reply == QMessageBox::Yes)
     {
-        query.prepare("insert into party values (:val1,:val2,0)");
+        query.prepare("insert into party values (:val1,:val2)");
 
         query.bindValue(":val1",p.Pid);
         query.bindValue(":val2",p.partyname);

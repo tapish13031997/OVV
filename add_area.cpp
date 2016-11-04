@@ -40,7 +40,7 @@ void add_area::on_submit_clicked()
 
     if(reply == QMessageBox::Yes)
     {
-        query.prepare("insert into area values (:val1,:val2,0)");
+        query.prepare("insert into area values (:val1,0,:val2)");
 
         query.bindValue(":val1",a.areacode);
         query.bindValue(":val2",a.areaname);

@@ -29,7 +29,11 @@ SOURCES += main.cpp\
     add_candidate.cpp \
     modify_candidate.cpp \
     voter_welcome_window.cpp \
-    voter_window.cpp
+    voter_window.cpp \
+    add_area.cpp \
+    add_party.cpp \
+    manage_parties.cpp \
+    manage_area.cpp
 
     voter_form.cpp
 
@@ -48,7 +52,12 @@ HEADERS  += mainwindow1.h \
     add_candidate.h \
     modify_candidate.h \
     voter_welcome_window.h \
-    voter_window.h
+    voter_window.h \
+    add_area.h \
+    add_party.h \
+    manage_parties.h \
+    party.h \
+    manage_area.h
 
 FORMS    += mainwindow1.ui \
     first_window.ui \
@@ -61,7 +70,11 @@ FORMS    += mainwindow1.ui \
     add_candidate.ui \
     modify_candidate.ui \
     voter_welcome_window.ui \
-    voter_window.ui
+    voter_window.ui \
+    add_area.ui \
+    add_party.ui \
+    manage_parties.ui \
+    manage_area.ui
 
 RESOURCES += \
     src/files.qrc
