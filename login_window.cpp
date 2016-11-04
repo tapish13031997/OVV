@@ -18,9 +18,9 @@ login_window::~login_window()
 
 bool login_window::check(const QString &username,const QString &password)
 {
-    if(username=="ADMIN")
+    if(username=="a")
     {
-        if(password=="root")
+        if(password=="x")
         {
             return 1;
         }
@@ -52,7 +52,7 @@ int login_window::login()
     {
          hide();
           name=username;
-         if(username=="ADMIN")
+         if(username=="a")
          {
           aptr=new admin(this);
           aptr->showMaximized();
