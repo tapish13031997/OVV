@@ -13,5 +13,5 @@ public:
     int Cid;
     void insert_candidate();
 };
-
+extern candidate Ctemp;
 #endif // CANDIDATE_H

@@ -16,7 +16,6 @@ public:
     ~modify_candidate();
 
 private slots:
-    void on_submit_clicked();
 
     void on_modify_clicked();
 
