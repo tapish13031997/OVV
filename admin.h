@@ -23,5 +23,5 @@ private slots:
 private:
     Ui::admin *ui;
 };
-
+extern int flag;
 #endif // ADMIN_H
