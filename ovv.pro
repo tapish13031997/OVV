@@ -7,6 +7,7 @@
 QT       += core gui
 QT +=sql
 QT +=widgets
+QT +=core
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = ovv
@@ -17,7 +18,6 @@ SOURCES += main.cpp\
         mainwindow1.cpp \
     first_window.cpp \
     login_window.cpp \
-    voter_window.cpp \
     candidate.cpp \
     area.cpp \
     voter.cpp \
@@ -27,14 +27,15 @@ SOURCES += main.cpp\
     select_area.cpp \
     manage_candidate.cpp \
     add_candidate.cpp \
-    modify_candidate.cpp
+    modify_candidate.cpp \
+    voter_welcome_window.cpp \
+    voter_window.cpp
 
     voter_form.cpp
 
 HEADERS  += mainwindow1.h \
     first_window.h \
     login_window.h \
-    voter_window.h \
     voter_form.h \
     area.h \
     candidate.h \
@@ -45,19 +46,22 @@ HEADERS  += mainwindow1.h \
     select_area.h \
     manage_candidate.h \
     add_candidate.h \
-    modify_candidate.h
+    modify_candidate.h \
+    voter_welcome_window.h \
+    voter_window.h
 
 FORMS    += mainwindow1.ui \
     first_window.ui \
     login_window.ui \
-    voter_window.ui \
     voter_form.ui \
     admin.ui \
     manage_voter.ui \
     select_area.ui \
     manage_candidate.ui \
     add_candidate.ui \
-    modify_candidate.ui
+    modify_candidate.ui \
+    voter_welcome_window.ui \
+    voter_window.ui
 
 RESOURCES += \
     src/files.qrc

@@ -1,13 +1,13 @@
 #ifndef VOTER_WINDOW_H
 #define VOTER_WINDOW_H
 
-#include <QDialog>
+#include <QMainWindow>
 
 namespace Ui {
 class voter_window;
 }
 
-class voter_window : public QDialog
+class voter_window : public QMainWindow
 {
     Q_OBJECT
 
@@ -16,15 +16,12 @@ public:
     ~voter_window();
 
 private slots:
-    void on_commandLinkButton_clicked();
-    void on_pushButton_clicked();
+    void on_cancel_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_submit_clicked();
 
 private:
     Ui::voter_window *ui;
-    voter_window * vwptr;
-    //vwptr=new voter_window(this);
 };
 
 #endif // VOTER_WINDOW_H
