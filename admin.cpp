@@ -2,6 +2,8 @@
 #include "ui_admin.h"
 #include "select_area.h"
 #include "first_window.h"
+#include "manage_candidate.h"
+int flag;
 admin::admin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::admin)
@@ -15,10 +17,15 @@ admin::~admin()
 }
 
 void admin::on_candidates_clicked()
-{   hide();
+{
+    hide();
+
+    flag=1;
+
     select_area *it;
-    it=new select_area;
-    it->showFullScreen();
+    it= new select_area;
+    it->showMaximized();
+
 }
 
 void admin::on_commandLinkButton_clicked()
