@@ -4,7 +4,9 @@
 #include"area.h"
 #include"select_area.h"
 #include <QMessageBox>
+#include "modify_candidate.h"
 #include "candidate.h"
+#include "add_candidate.h"
 candidate Ctemp;
 manage_candidate::manage_candidate(QWidget *parent) :
     QDialog(parent),
@@ -85,7 +87,9 @@ void manage_candidate::on_remove_clicked()
 
 void manage_candidate::on_insert_candidate_clicked()
 {
-
+    add_candidate *it;
+    it=new add_candidate;
+    it->showMaximized();
 }
 
 void manage_candidate::on_modify_clicked()
@@ -111,7 +115,7 @@ void manage_candidate::on_modify_clicked()
     Ctemp.sex=query.value(3).toString();
     Ctemp.DOB=query.value(4).toString();
     Ctemp.areacode=query.value(5).toInt();
-  //  modify_candidate *jt;
-   // jt=new modify_candidate;
-    //jt->showMaximized();
+    modify_candidate *jt;
+    jt=new modify_candidate;
+    jt->showMaximized();
 }

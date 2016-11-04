@@ -2,6 +2,7 @@
 #define MANAGE_CANDIDATE_H
 
 #include <QDialog>
+#include "candidate.h"
 namespace Ui {
 class manage_candidate;
 }
