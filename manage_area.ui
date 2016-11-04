@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>manage_area</class>
+ <widget class="QDialog" name="manage_area">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>718</width>
+    <height>503</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="insert_area">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>340</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add New</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="delete_area">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>340</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Remove</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>30</y>
+     <width>59</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Areas</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="area_list">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>60</y>
+     <width>241</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Select Area</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="back">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>410</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="src/files.qrc">
+     <normaloff>:/back-button.png</normaloff>:/back-button.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>120</width>
+     <height>150</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="areacode">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>60</y>
+     <width>81</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Area Code</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources>
+  <include location="src/files.qrc"/>
+ </resources>
+ <connections/>
+</ui>
