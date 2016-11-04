@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>hqdefault.jpg</file>
+        <file>back-button.png</file>
+        <file>green-modify-button-clip-art.png</file>
+        <file>14144256491614649893green_submit_button_by_rukiaxichigo152-hi.png</file>
+    </qresource>
+</RCC>
