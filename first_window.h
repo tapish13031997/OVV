@@ -2,8 +2,6 @@
 #define first_window_H
 
 #include <QMainWindow>
-#include <login_window.h>
-#include <voter_form.h>
 namespace Ui {
 class first_window;
 }
@@ -23,8 +21,7 @@ private slots:
 
 private:
     Ui::first_window *ui;
-    login_window * lwptr;
-    voter_form *vfptr;
+
 
 };
 

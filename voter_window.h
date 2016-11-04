@@ -17,6 +17,10 @@ public:
 
 private slots:
     void on_commandLinkButton_clicked();
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::voter_window *ui;
     voter_window * vwptr;

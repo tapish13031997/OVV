@@ -3,6 +3,7 @@
 #include "select_area.h"
 #include "first_window.h"
 #include "manage_candidate.h"
+#include "manage_voter.h"
 int flag;
 admin::admin(QWidget *parent) :
     QDialog(parent),
@@ -16,17 +17,12 @@ admin::~admin()
     delete ui;
 }
 
-void admin::on_candidates_clicked()
-{
-    hide();
-
-    flag=1;
-
-    select_area *it;
-    it= new select_area;
-    it->showMaximized();
-
-}
+//void admin::on_candidates_clicked()
+//{  // hide();
+   // select_area *it;
+  //  it=new select_area;
+ //   it->showFullScreen();
+//}
 
 void admin::on_commandLinkButton_clicked()
 {
@@ -34,4 +30,28 @@ void admin::on_commandLinkButton_clicked()
     first_window *it;
     it=new first_window;
     it->showMaximized();
+}
+
+void admin::on_voters_clicked()
+{
+    hide();
+
+       flag=2;
+
+       select_area *it;
+       it= new select_area;
+       it->showMaximized();
+}
+
+void admin::on_candidates_clicked()
+{
+    hide();
+
+       flag=1;
+
+       select_area *it;
+       it= new select_area;
+       it->showMaximized();
+
+
 }

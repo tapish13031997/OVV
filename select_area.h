@@ -3,6 +3,7 @@
 
 #include <QDialog>
 
+
 namespace Ui {
 class select_area;
 }

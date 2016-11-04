@@ -3,7 +3,8 @@
 #include <QMessageBox>
 #include "initdb.h"
 #include "admin.h"
-#include <QDebug>
+#include "voter_window.h"
+#include "login_window.h"
 login_window::login_window(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::login_window)
@@ -18,32 +19,28 @@ login_window::~login_window()
 
 bool login_window::check(const QString &username,const QString &password)
 {
-    if(username=="a")
+    if(username=="ADMIN")
     {
-        if(password=="x")
+        if(password=="root")
         {
             return 1;
         }
         return 0;
     }
-    QSqlQuery query;
-    query.prepare("select * from voter");
-    query.exec();
-    while(query.next())
+    QSqlQuery query3;
+    query3.prepare("select * from voter");
+    query3.exec();
+    while(query3.next())
     {
-    if(query.value(1).toString()==username && query.value(2).toString()==password)
+    if(query3.value(1).toString()==username && query3.value(2).toString()==password)
     {
-         //qDebug()<<"JJJJ";
         return true;
-
     }
 }
 return false;
 }
 int login_window::login()
 {
-
-
     username=ui->Username_lineEdit->text();
     password=ui->password_lineEdit->text();
      //QMessageBox messageBox;
@@ -51,15 +48,16 @@ int login_window::login()
     if(check(username,password))
     {
          hide();
-          name=username;
-         if(username=="a")
+         name=username;
+         if(username=="ADMIN")
          {
+             admin *aptr;
           aptr=new admin(this);
           aptr->showMaximized();
          }
          else
          {
-
+            voter_window * vptr;
          vptr=new voter_window(this);
          vptr->showMaximized();
         }

@@ -3,8 +3,7 @@
 
 #include <QMainWindow>
 #include <QTableWidget>
-#include "initdb.h"
-#include "area.h"
+
 
 namespace Ui {
 class manage_voter;

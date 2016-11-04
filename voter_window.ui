@@ -22,7 +22,7 @@
   <widget class="QPushButton" name="voter_vote">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>120</x>
      <y>430</y>
      <width>151</width>
      <height>41</height>
@@ -81,9 +81,9 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>440</x>
      <y>430</y>
-     <width>151</width>
+     <width>141</width>
      <height>41</height>
     </rect>
    </property>
@@ -543,7 +543,7 @@
      <x>120</x>
      <y>70</y>
      <width>201</width>
-     <height>21</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="palette">
@@ -1390,7 +1390,7 @@ border-color: rgb(150, 150, 150);</string>
      <x>120</x>
      <y>110</y>
      <width>201</width>
-     <height>21</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="palette">
@@ -1763,6 +1763,19 @@ border-color: rgb(150, 150, 150);</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>299</x>
+     <y>431</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>EDIT PROFILE</string>
    </property>
   </widget>
  </widget>

@@ -1,11 +1,12 @@
 #include "select_area.h"
 #include "ui_select_area.h"
-
 #include "initdb.h"
 #include "admin.h"
 #include <QDebug>
 #include "area.h"
 #include "manage_candidate.h"
+#include "QMessageBox"
+#include "manage_voter.h"
 area A;
 
 select_area::select_area(QWidget *parent) :
@@ -46,27 +47,23 @@ void select_area::on_next_clicked()
 
    QSqlQuery query;
 
-  // qDebug()<<s;
+  //qDebug()<<s;
 
-   query.exec("select * from area where areaname =:val");
+   query.prepare("select * from area where areaname = :val ");
 
    query.bindValue(":val",s);
 
-   query.exec();
+   if(!query.exec())
+   {
+    QMessageBox myinfo;
+    myinfo.critical(0,"ERROR","CANT EXECUTE");
+}
 
    query.first();
 
 
 
       A.areacode=query.value(0).toInt();
-
-      //qDebug()<<A.areacode;
-
-    /*manage_candidate *it;
-    it=new manage_candidate;
-    hide();
-    it->showMaximized();*/
-//qDebug()<<flag;
 
     if(flag==1)
     {
@@ -75,6 +72,13 @@ void select_area::on_next_clicked()
            manage_candidate *it;
            it=new manage_candidate;
            it->showMaximized();
+    }
+    else if(flag==2)
+    {
+        manage_voter *mvptr;
+        hide();
+            mvptr=new manage_voter(this);
+        mvptr->showMaximized();
     }
 }
 

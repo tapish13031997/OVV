@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <dialog.h>
-#include <first_window.h>
 
 namespace Ui {
 class MainWindow1;
@@ -21,7 +20,6 @@ public:
 private slots:
 private:
     Ui::MainWindow1 *ui;
-    first_window *fwptr;
 
 };
 

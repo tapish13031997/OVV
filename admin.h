@@ -3,6 +3,7 @@
 
 #include <QDialog>
 
+
 namespace Ui {
 class admin;
 }
@@ -17,7 +18,7 @@ public:
 
 private slots:
     void on_candidates_clicked();
-
+void on_voters_clicked();
     void on_commandLinkButton_clicked();
 
 private:

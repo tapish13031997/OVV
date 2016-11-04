@@ -4,6 +4,7 @@
 #include "initdb.h"
 #include "first_window.h"
 #include "QMessageBox"
+#include "voter_window.h"
 voter_form::voter_form(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::voter_form)
@@ -101,7 +102,7 @@ void voter_form::on_submit_clicked()
     S+="Your UID is ";
     S+=QString::number(v.Uid);
     S+="\nKindly keep this safe for future references";
-    QMessageBox::information(this,"SUCCESSFULL",S);
+    QMessageBox::information(this,"SUCCESSFUL",S);
 
     hide();
 
@@ -119,33 +120,14 @@ void voter_form::on_cancel_clicked()
     jt=new first_window(this);
     jt->showMaximized();
 }
-void voter_form::voter_edit(int uid)
+void voter_form::myvoter_edit(QString name)
 {
-    QSqlQuery query,query2;
 
-    query.prepare("select * from voter where uid =:val");
-    query.bindValue(":val",uid);
-if(!query.exec())
-{
-       QMessageBox::information(this,"UNSUCCESSFULL","");
-}
-query.first();
-ui->username->setText(query.value(1).toString());
-ui->password->setText(query.value(2).toString());
-ui->name->setText(query.value(3).toString());
-ui->repassword->setText(query.value(2).toString());
-ui->password->setEchoMode(QLineEdit::Normal);
-ui->repassword->setEchoMode(QLineEdit::Normal);
-//ui->DOB;
-ui->phone->setText(query.value(7).toString());
-ui->username->setText(query.value(1).toString());
-        query2.prepare("select areaname from area where areacode =:val");
-        query2.bindValue(":val",query.value(4).toInt());
-        query2.exec();
-        query2.first();
-        ui->area->setCurrentText(query2.value(0).toString());
+    QSqlQuery query2;
+    query2.prepare("delete from voter where username =:val");
+    query2.bindValue(":val",name);
+    query2.exec();
+    vfptr=new voter_form(this);
+vfptr->showMaximized();
 
-query2.clear();
-query2.prepare("delete from voter where uid =:val");
-query2.bindValue(":val",uid);
 }

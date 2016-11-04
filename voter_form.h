@@ -2,7 +2,6 @@
 #define VOTER_FORM_H
 
 #include <QMainWindow>
-#include "voter_window.h"
 
 namespace Ui {
 class voter_form;
@@ -14,8 +13,8 @@ class voter_form : public QMainWindow
 
 public:
     explicit voter_form(QWidget *parent = 0);
-
-    void voter_edit(int uid);
+    void myvoter_edit(QString name);
+    QString temp;
     ~voter_form();
 
 private slots:
@@ -25,7 +24,6 @@ private slots:
     
 private:
     Ui::voter_form *ui;
-    voter_window *it;
     voter_form *vfptr;
     //first_window *jt;
 

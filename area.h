@@ -5,10 +5,10 @@
 class area
 {
     public:
-
     int areacode;
     int population;
     QString areaname;
 };
+extern area A;
 
 #endif // AREA_H

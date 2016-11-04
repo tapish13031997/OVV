@@ -80,7 +80,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Edit</string>
+     <string>Delete</string>
     </property>
    </widget>
    <widget class="QCommandLinkButton" name="commandLinkButton">

@@ -107,17 +107,19 @@
     <string/>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>../Downloads/back-button.png</normaloff>../Downloads/back-button.png</iconset>
+    <iconset resource="src/files.qrc">
+     <normaloff>:/back-button.png</normaloff>:/back-button.png</iconset>
    </property>
    <property name="iconSize">
     <size>
-     <width>1000</width>
-     <height>30</height>
+     <width>80</width>
+     <height>120</height>
     </size>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="src/files.qrc"/>
+ </resources>
  <connections/>
 </ui>
