@@ -4,5 +4,9 @@
         <file>back-button.png</file>
         <file>green-modify-button-clip-art.png</file>
         <file>14144256491614649893green_submit_button_by_rukiaxichigo152-hi.png</file>
+        <file>abort-png-hi.png</file>
+        <file>button_generate-result.png</file>
+        <file>button_view-election-stats.png</file>
+        <file>button_save-changes.png</file>
     </qresource>
 </RCC>
