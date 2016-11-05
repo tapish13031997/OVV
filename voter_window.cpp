@@ -6,8 +6,7 @@
 #include "QStringList"
 #include "login_window.h"
 #include "voter.h"
-#include "election_time.h"
-#include <QTimer>
+
 int Uid;
 voter_window::voter_window(QWidget *parent) :
     QMainWindow(parent),
