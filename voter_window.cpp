@@ -65,8 +65,12 @@ query2.prepare("select areaname from area where areacode=:val");
 query2.bindValue(":val",query.value(4));
 query2.exec();
 query2.first();
-ui->area->setCurrentText(query2.value(0).toString());
-    }
+
+int index=ui->area->findText(query2.value(0).toString());
+
+ui->area->setCurrentIndex(index);
+
+}
 
 }
 
