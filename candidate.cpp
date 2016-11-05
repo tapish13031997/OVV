@@ -20,5 +20,10 @@ void candidate::insert_candidate()
 
     query.exec();
 
+    query.prepare("insert into area values(:val1,0)");
+    query.bindValue(":val",Cid);
+
+    query.exec();
+
     qDebug()<<query.lastError();
 }
