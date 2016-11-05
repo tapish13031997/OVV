@@ -29,7 +29,7 @@ manage_area::manage_area(QWidget *parent) :
              temp=query.value(2).toString();
             ui->area_list->addItem(temp);
 
-
+            ui->population->addItem(query.value(1).toString());
     }
 }
 
@@ -39,10 +39,10 @@ manage_area::~manage_area()
 }
 
 void manage_area::on_insert_area_clicked()
-{
+{   hide();
     add_area *it;
     it=new add_area;
-    it->show();
+    it->showMaximized();
 }
 
 void manage_area::on_delete_area_clicked()
@@ -74,7 +74,9 @@ void manage_area::on_delete_area_clicked()
             manage_area *iti;
             iti = new manage_area;
             iti->showMaximized();
-        }
+
+
+    }
 }
 
 void manage_area::on_back_clicked()

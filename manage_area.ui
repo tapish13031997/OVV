@@ -18,7 +18,7 @@
     <rect>
      <x>230</x>
      <y>340</y>
-     <width>161</width>
+     <width>191</width>
      <height>41</height>
     </rect>
    </property>
@@ -29,7 +29,7 @@
   <widget class="QPushButton" name="delete_area">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>420</x>
      <y>340</y>
      <width>161</width>
      <height>41</height>
@@ -57,7 +57,7 @@
     <rect>
      <x>310</x>
      <y>60</y>
-     <width>241</width>
+     <width>181</width>
      <height>281</height>
     </rect>
    </property>
@@ -102,9 +102,30 @@
      <height>281</height>
     </rect>
    </property>
+   <property name="sortingEnabled">
+    <bool>false</bool>
+   </property>
    <item>
     <property name="text">
      <string>Area Code</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QListWidget" name="population">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>60</y>
+     <width>91</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Population</string>
     </property>
    </item>
   </widget>
