@@ -15,10 +15,16 @@ public:
     explicit voter_welcome_window(QWidget *parent = 0);
     ~voter_welcome_window();
 
+
+
+
+
 private slots:
     void on_commandLinkButton_clicked();
 
     void on_pushButton_clicked();
+
+    void showTimer();
 
 private:
     Ui::voter_welcome_window *ui;
