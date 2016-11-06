@@ -47,6 +47,7 @@ void add_area::on_submit_clicked()
         query.bindValue(":val1",a.areacode);
         query.bindValue(":val2",a.areaname);
 
+
         query.exec();
 
         flag=true;

@@ -67,9 +67,17 @@ void view_candidates::on_pushButton_clicked()
     {
 
             vote v;
-            QSqlQuery query2;
-            query2.prepare("insert into canvote values (:val1,1)");
+            QSqlQuery query2,query1;
+            query1.prepare("select areacode from voter where Uid=:val1");
+            query1.bindValue(":val1",myuid);
+            query1.exec();
+            query1.first();
+            v.areacode=query1.value(0).toInt();
+
+            query2.prepare("insert into canvote values (:val1,1,:val2)");
             query2.bindValue(":val1",myuid);
+            qDebug()<<query2.lastQuery();
+            query2.bindValue(":val2",v.areacode);
             if(query2.exec())
                 qDebug()<<query2.lastQuery();
 

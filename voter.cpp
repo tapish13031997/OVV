@@ -3,7 +3,10 @@
 #include <QApplication>
 #include "voter.h"
 #include "initdb.h"
-
+#include "QMessageBox"
+#include "QDate"
+#include "voter_form.h"
+voter v;
 void voter::insert_voter()
 {
 
@@ -23,8 +26,18 @@ void voter::insert_voter()
    query.bindValue(":phone",phone);
 
    if(!query.exec())
-   qDebug()<<query.lastError();
+   {
+       QMessageBox inform;
+       inform.critical(0,"ERROR","CONTACT ADMIN");
+   }
+    query.clear();
+    query.prepare("update area set population = population +1 where areacode = :val ");
+    query.bindValue(":val",areacode);
+    if(!query.exec())
+    {
 
-
+        QMessageBox inform;
+        inform.critical(0,"ERROR","CONTACT ADMIN");
+    }
 
 }

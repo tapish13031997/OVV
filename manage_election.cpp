@@ -7,6 +7,7 @@
 #include "result_chart.h"
 #include "select_area.h"
 #include "party_results.h"
+#include "view_stats.h"
 election_time start_time,end_time;
 
 Manage_Election::Manage_Election(QWidget *parent) :
@@ -70,8 +71,8 @@ void Manage_Election::on_abort_clicked()
 
         start_time.samay=QDateTime::currentDateTime();
 
-        qDebug()<<end_time.samay.date()<<' '<<end_time.samay.time()<<' '<<start_time.samay.date()<<' '<<start_time.samay.time()<<endl;
-        qDebug()<<QDate::currentDate()<<' '<<QTime::currentTime()<<endl;
+      //  qDebug()<<end_time.samay.date()<<' '<<end_time.samay.time()<<' '<<start_time.samay.date()<<' '<<start_time.samay.time()<<endl;
+       // qDebug()<<QDate::currentDate()<<' '<<QTime::currentTime()<<endl;
 
         hide();
 
@@ -84,9 +85,9 @@ void Manage_Election::on_abort_clicked()
 
 void Manage_Election::on_stats_clicked()
 {
-    select_area *saptr;
-    saptr=new select_area;
-    saptr->showFullScreen();
+view_stats *vsptr;
+vsptr=new view_stats;
+vsptr->showMaximized();
 }
 
 void Manage_Election::on_save_clicked()

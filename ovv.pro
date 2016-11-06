@@ -38,9 +38,8 @@ SOURCES += main.cpp\
     vote.cpp \
     manage_election.cpp \
     party_results.cpp \
-    result_chart.cpp
-
-    voter_form.cpp
+    result_chart.cpp \
+    view_stats.cpp
 
 HEADERS  += mainwindow1.h \
     first_window.h \
@@ -68,7 +67,8 @@ HEADERS  += mainwindow1.h \
     election_time.h \
     manage_election.h \
     party_results.h \
-    result_chart.h
+    result_chart.h \
+    view_stats.h
 
 FORMS    += mainwindow1.ui \
     first_window.ui \
@@ -90,7 +90,8 @@ FORMS    += mainwindow1.ui \
     manage_election.ui \
     graph.ui \
     party_results.ui \
-    result_chart.ui
+    result_chart.ui \
+    view_stats.ui
 
 RESOURCES += \
     src/files.qrc

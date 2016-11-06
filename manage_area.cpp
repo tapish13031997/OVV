@@ -63,11 +63,37 @@ void manage_area::on_delete_area_clicked()
 
             QSqlQuery query;
 
-            query.prepare("delete from area where areaname = :val1");
+             query.prepare("select areacode from area where areaname =:val1");
 
             query.bindValue(":val1",t);
 
             query.exec();
+
+            query.first();
+
+            int x=query.value(0).toInt();
+
+            query.prepare("delete from area where areacode =:val");
+            query.bindValue(":val",x);
+
+            query.exec();
+
+             query.prepare("delete from candidate where areacode = :val");
+             query.bindValue(":val",x);
+
+             query.exec();
+
+             query.prepare("delete from voter where areacode = :val");
+             query.bindValue(":val",x);
+
+             query.exec();
+
+
+
+
+
+
+
 
             hide();
 

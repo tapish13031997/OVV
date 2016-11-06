@@ -18,6 +18,18 @@ add_candidate::add_candidate(QWidget *parent) :
 
     while(query.next())
     {
+        QSqlQuery query2;
+
+            query2.prepare("select * from candidate where party=:val1 and areacode=:val2");
+
+                    query2.bindValue(":val1",query.value(0).toString());
+                    query2.bindValue(":val2",A.areacode);
+
+                    query2.exec();
+
+                    if(query2.first())
+                        continue;
+
            QString temp=query.value(0).toString();
            ui->party->addItem(temp);
     }

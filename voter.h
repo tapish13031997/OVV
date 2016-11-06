@@ -17,5 +17,7 @@ public:
    void insert_voter();
 
 };
-
+extern voter v,temp;
+extern int flag;
 #endif // VOTER_H
+
