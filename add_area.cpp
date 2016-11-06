@@ -8,6 +8,8 @@ add_area::add_area(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::add_area)
 {
+
+
     ui->setupUi(this);
 }
 
@@ -49,7 +51,7 @@ void add_area::on_submit_clicked()
 
         flag=true;
 
-        hide();
+
 
     }
 
@@ -59,12 +61,17 @@ void add_area::on_submit_clicked()
         QMessageBox::information(this,"SUCCESSFUL","Successfully added "+a.areaname);
 
         manage_area *it;
-        it=new manage_area;
+        it=new manage_area(this);
         it->showMaximized();
     }
+
+    hide();
 }
 
 void add_area::on_back_clicked()
 {
     hide();
+    manage_area *it;
+    it=new manage_area(this);
+    it->showMaximized();
 }

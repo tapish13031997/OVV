@@ -23,6 +23,8 @@ private slots:
 
     void on_modify_clicked();
 
+    void on_commandLinkButton_clicked();
+
 private:
     Ui::manage_candidate *ui;
 };

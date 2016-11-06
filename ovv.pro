@@ -33,7 +33,12 @@ SOURCES += main.cpp\
     add_area.cpp \
     add_party.cpp \
     manage_parties.cpp \
-    manage_area.cpp
+    manage_area.cpp \
+    view_candidates.cpp \
+    vote.cpp \
+    manage_election.cpp \
+    party_results.cpp \
+    result_chart.cpp
 
     voter_form.cpp
 
@@ -57,7 +62,13 @@ HEADERS  += mainwindow1.h \
     add_party.h \
     manage_parties.h \
     party.h \
-    manage_area.h
+    manage_area.h \
+    view_candidates.h \
+    vote.h \
+    election_time.h \
+    manage_election.h \
+    party_results.h \
+    result_chart.h
 
 FORMS    += mainwindow1.ui \
     first_window.ui \
@@ -74,7 +85,12 @@ FORMS    += mainwindow1.ui \
     add_area.ui \
     add_party.ui \
     manage_parties.ui \
-    manage_area.ui
+    manage_area.ui \
+    view_candidates.ui \
+    manage_election.ui \
+    graph.ui \
+    party_results.ui \
+    result_chart.ui
 
 RESOURCES += \
     src/files.qrc

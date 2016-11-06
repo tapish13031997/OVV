@@ -7,6 +7,7 @@
 #include "manage_candidate.h"
 #include "QMessageBox"
 #include "manage_voter.h"
+#include "result_chart.h"
 area A;
 
 select_area::select_area(QWidget *parent) :
@@ -79,6 +80,13 @@ void select_area::on_next_clicked()
         hide();
             mvptr=new manage_voter(this);
         mvptr->showMaximized();
+    }
+    else if(flag==3)
+    {
+       result_chart *it;
+       it=new result_chart;
+       it->show();
+
     }
 }
 

@@ -4,6 +4,9 @@
 #include "election_time.h"
 #include <QMessageBox>
 #include <QDebug>
+#include "result_chart.h"
+#include "select_area.h"
+#include "party_results.h"
 election_time start_time,end_time;
 
 Manage_Election::Manage_Election(QWidget *parent) :
@@ -30,7 +33,16 @@ Manage_Election::~Manage_Election()
 
 void Manage_Election::on_result_clicked()
 {
+    /*flag=3;
+        hide();
+        select_area *it;
+        it=new select_area;
+        it->showMaximized();*/
 
+        hide();
+        party_results *it;
+        it=new party_results;
+        it->showFullScreen();
 }
 
 void Manage_Election::on_back_clicked()
@@ -54,8 +66,12 @@ void Manage_Election::on_abort_clicked()
     {
 
 
-        end_time.samay.date()=QDate::currentDate();
-        end_time.samay.time()=QTime::currentTime();
+        end_time.samay=QDateTime::currentDateTime();
+
+        start_time.samay=QDateTime::currentDateTime();
+
+        qDebug()<<end_time.samay.date()<<' '<<end_time.samay.time()<<' '<<start_time.samay.date()<<' '<<start_time.samay.time()<<endl;
+        qDebug()<<QDate::currentDate()<<' '<<QTime::currentTime()<<endl;
 
         hide();
 
@@ -63,11 +79,14 @@ void Manage_Election::on_abort_clicked()
         it=new Manage_Election;
         it->showMaximized();
     }
+
 }
 
 void Manage_Election::on_stats_clicked()
 {
-
+    select_area *saptr;
+    saptr=new select_area;
+    saptr->showFullScreen();
 }
 
 void Manage_Election::on_save_clicked()

@@ -50,6 +50,9 @@
     <property name="text">
      <string>LOGIN</string>
     </property>
+    <property name="shortcut">
+     <string>L</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="register_button">
     <property name="geometry">
@@ -62,6 +65,9 @@
     </property>
     <property name="text">
      <string>REGISTER</string>
+    </property>
+    <property name="shortcut">
+     <string>R</string>
     </property>
    </widget>
   </widget>

@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 extern QString voter_name;
+extern int areacode;
+extern int myuid;
 namespace Ui {
 class voter_welcome_window;
 }
@@ -25,6 +27,10 @@ private slots:
     void on_pushButton_clicked();
 
     void showTimer();
+
+
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::voter_welcome_window *ui;

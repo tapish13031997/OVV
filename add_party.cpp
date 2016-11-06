@@ -52,7 +52,7 @@ void add_party::on_submit_clicked()
 
         flag=true;
 
-        hide();
+
 
     }
 
@@ -65,9 +65,14 @@ void add_party::on_submit_clicked()
         it=new manage_parties;
         it->showMaximized();
     }
+    hide();
 }
 
 void add_party::on_back_clicked()
 {
     hide();
+
+    manage_parties *it;
+    it=new manage_parties;
+    it->showMaximized();
 }

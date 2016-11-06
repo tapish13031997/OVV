@@ -7,6 +7,7 @@ class vote
 
 public:
 int Cid;
+int areacode;
 int votes;
 void insert_vote();
     vote();

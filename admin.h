@@ -25,6 +25,8 @@ void on_voters_clicked();
 
     void on_areas_clicked();
 
+    void on_elections_clicked();
+
 private:
     Ui::admin *ui;
 };

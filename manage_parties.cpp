@@ -44,9 +44,10 @@ manage_parties::~manage_parties()
 
 void manage_parties::on_insert_party_clicked()
 {
+    hide();
     add_party *it;
     it=new add_party;
-    it->show();
+    it->showFullScreen();
 
 
 }

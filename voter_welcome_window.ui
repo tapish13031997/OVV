@@ -26,6 +26,9 @@
     <property name="text">
      <string>LOGOUT</string>
     </property>
+    <property name="shortcut">
+     <string>Esc</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
@@ -39,18 +42,8 @@
     <property name="text">
      <string>Edit Profile</string>
     </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>260</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>View Candidates</string>
+    <property name="shortcut">
+     <string>E</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -82,7 +75,7 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>350</x>
       <y>260</y>
       <width>131</width>
       <height>31</height>
@@ -90,6 +83,9 @@
     </property>
     <property name="text">
      <string>Vote</string>
+    </property>
+    <property name="shortcut">
+     <string>V</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="start_end">
@@ -139,16 +135,6 @@
      <string/>
     </property>
    </widget>
-   <zorder>commandLinkButton</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>label</zorder>
-   <zorder>lineEdit</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>start_end</zorder>
-   <zorder>election_timer</zorder>
-   <zorder>days_left</zorder>
-   <zorder>days_left</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

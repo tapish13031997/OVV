@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>manage_voter</class>
- <widget class="QMainWindow" name="manage_voter">
+ <class>view_candidates</class>
+ <widget class="QMainWindow" name="view_candidates">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,46 +17,59 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>801</width>
-      <height>411</height>
+      <x>10</x>
+      <y>10</y>
+      <width>531</width>
+      <height>401</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::WinPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
     </property>
     <property name="editTriggers">
      <set>QAbstractItemView::NoEditTriggers</set>
     </property>
-    <property name="dragEnabled">
+    <property name="alternatingRowColors">
      <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::NoSelection</enum>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+    <property name="gridStyle">
+     <enum>Qt::SolidLine</enum>
     </property>
     <column>
      <property name="text">
-      <string>Uid</string>
+      <string>Cid</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Username</string>
+      <string>NAME</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Password</string>
+      <string>PARTY</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Name</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>AreaCode</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Sex</string>
+      <string>SEX</string>
      </property>
     </column>
     <column>
@@ -64,30 +77,12 @@
       <string>DOB</string>
      </property>
     </column>
-    <column>
-     <property name="text">
-      <string>Phone</string>
-     </property>
-    </column>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>430</y>
-      <width>80</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Delete</string>
-    </property>
    </widget>
    <widget class="QCommandLinkButton" name="commandLinkButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>420</y>
+      <x>20</x>
+      <y>440</y>
       <width>174</width>
       <height>41</height>
      </rect>
@@ -96,19 +91,21 @@
      <string>GO BACK</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>440</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>VOTE</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
  </widget>
  <resources/>
  <connections/>

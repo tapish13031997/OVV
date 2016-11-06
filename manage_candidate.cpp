@@ -7,6 +7,7 @@
 #include "modify_candidate.h"
 #include "candidate.h"
 #include "add_candidate.h"
+#include "admin.h"
 candidate Ctemp;
 manage_candidate::manage_candidate(QWidget *parent) :
     QDialog(parent),
@@ -87,6 +88,7 @@ void manage_candidate::on_remove_clicked()
 
 void manage_candidate::on_insert_candidate_clicked()
 {
+    hide();
     add_candidate *it;
     it=new add_candidate;
     it->showMaximized();
@@ -118,4 +120,12 @@ void manage_candidate::on_modify_clicked()
     modify_candidate *jt;
     jt=new modify_candidate;
     jt->showMaximized();
+}
+
+void manage_candidate::on_commandLinkButton_clicked()
+{
+    hide();
+    admin * it;
+    it=new admin;
+    it->showMaximized();
 }

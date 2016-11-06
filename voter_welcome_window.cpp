@@ -27,13 +27,13 @@ voter_welcome_window::voter_welcome_window(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->lineEdit->setText(name);//name is actually username not name;
-
+int var_tapish=0;
         //qDebug()<<start_time.samay.date().day()<<" "<<start_time.samay.date().month()<<" "<<start_time.samay.date().year();
 
-        if((start_time.samay.date() < QDate::currentDate()) or (start_time.samay.date() ==QDate::currentDate() and start_time.samay.time() > QTime::currentTime()))
+        if((start_time.samay.date() > QDate::currentDate()) or (start_time.samay.date() ==QDate::currentDate() and start_time.samay.time() > QTime::currentTime()))
         {
             ui->start_end->setText("Election Starts in");
-
+            ui->pushButton_3->setDisabled(true);
                     fag=false;
 
         }
@@ -46,9 +46,20 @@ voter_welcome_window::voter_welcome_window(QWidget *parent) :
               \
 
             }
+        else
+        {
+
+            QSqlQuery query1;
+            query1.exec("delete from canvote");
+             ui->start_end->setText("Election Ended");
+             var_tapish=1;
+         }
+        if(!var_tapish)
+        {
          QTimer *timer=new QTimer(this);
             connect(timer,SIGNAL(timeout()),this,SLOT(showTimer()));
             timer->start();
+        }
     QSqlQuery query1;
     query1.prepare("select areacode,Uid from voter where username =:val ");
     query1.bindValue(":val",name);
@@ -67,7 +78,7 @@ QSqlQuery query2;
     query2.prepare("select * from canvote where Uid =:val1");
     query2.bindValue(":val1",myuid);
     query2.exec();
-    if(query2.first())
+    if(query2.first()||var_tapish==1)
     {
        ui->pushButton_3->setDisabled(1);
     }
@@ -121,3 +132,4 @@ void voter_welcome_window::on_pushButton_3_clicked()
     vcptr=new view_candidates;
     vcptr->showFullScreen();
 }
+

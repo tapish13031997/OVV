@@ -45,7 +45,7 @@
      <x>230</x>
      <y>440</y>
      <width>181</width>
-     <height>41</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -68,6 +68,9 @@
    </item>
   </widget>
   <widget class="QListWidget" name="candidate_party">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>370</x>
@@ -83,6 +86,9 @@
    </item>
   </widget>
   <widget class="QListWidget" name="cid">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>160</x>
@@ -96,6 +102,19 @@
      <string>CID</string>
     </property>
    </item>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>430</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>GO BACK</string>
+   </property>
   </widget>
  </widget>
  <resources/>

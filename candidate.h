@@ -5,12 +5,12 @@
 class candidate
 {
 public:
+     int Cid;
     QString name;
     QString party;
     QString sex;
     QString DOB;
     int areacode;
-    int Cid;
     void insert_candidate();
 };
 extern candidate Ctemp;

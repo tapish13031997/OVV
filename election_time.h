@@ -5,7 +5,7 @@
 class election_time{
 
 public:
-    QDateTime samay;
+    QDateTime samay=QDateTime(QDate(2016,11,6),QTime(20,0,0));
 };
 extern election_time start_time;
 extern election_time end_time;

@@ -80,6 +80,7 @@ modify_candidate::~modify_candidate()
 
 void modify_candidate::on_modify_clicked()
 {
+
     QMessageBox::StandardButton reply;
 
     QSqlQuery query;
