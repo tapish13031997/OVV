@@ -11,14 +11,60 @@ party_results::party_results(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QSqlQuery query,query1;
+    QSqlQuery query,query1,query2,query3,query4;
+
+    query.exec("update party_vote set votecount=0");
+
+    query.prepare("select areacode from area");
+
+    query.exec();
+
+    while(query.next())
+    {
+        int x=query.value(0).toInt();
+        query1.prepare("select Cid from candidate_vote where areacode=:val1 and votecount= (select max(votecount) from candidate_vote where areacode=:val)");
+        query1.bindValue(":val",x);
+        query1.bindValue(":val1",x);
+        //qDebug()<<x;
+
+
+        if(!query1.exec())
+            qDebug()<<query1.lastError();
+
+        query1.first();
+
+       //qDebug()<<query1.value(0).toInt();
+
+        query2.prepare("select party from candidate where Cid=:val");
+        query2.bindValue(":val",query1.value(0).toInt());
+        query2.exec();
+        query2.first();
+
+        //qDebug()<<query2.value(0).toString();
+
+        query3.prepare("select Pid from party where partyname =:val");
+        query3.bindValue(":val",query2.value(0).toString());
+        query3.exec();
+
+        query3.first();
+
+        //qDebug()<<query3.value(0).toInt();
+
+        query4.prepare("update party_vote set votecount=votecount+1 where Pid=:val");
+        query4.bindValue(":val",query3.value(0).toInt());
+
+        query4.exec();
+
+
+    }
 
     query.prepare("select * from party_vote");
 
     query.exec();
 
     int cur=10;
-
+    int x=200;
+    int y=200;
     int i=0;
     
     QLabel *w[100],*w2[100]; QLineEdit *l[100];
@@ -36,11 +82,11 @@ party_results::party_results(QWidget *parent) :
         query1.exec();
         query1.first();
 
-        w[i]->setGeometry(20,cur,150 ,20);
-        l[i]->setGeometry(175,cur,query.value(1).toInt()*5,20);
+        w[i]->setGeometry(x+20,y+cur,150 ,20);
+        l[i]->setGeometry(x+175,y+cur,query.value(1).toInt()*20,20);
 
 
-        w2[i]->setGeometry(175+query.value(1).toInt()*5+30,cur,30,20);
+        w2[i]->setGeometry(x+175+query.value(1).toInt()*20+30,y+cur,30,20);
         w2[i]->setText(query.value(1).toString());
         w2[i]->setVisible(true);
 

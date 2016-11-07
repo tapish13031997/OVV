@@ -3,6 +3,7 @@
 #include "manage_candidate.h"
 #include "candidate.h"
 #include "area.h"
+#include "select_area.h"
 #include "initdb.h"
 #include <QMessageBox>
 add_candidate::add_candidate(QWidget *parent) :
@@ -115,8 +116,8 @@ void add_candidate::on_submit_clicked()
 
 
     hide();
-    manage_candidate *it;
-    it=new manage_candidate;
+    select_area *it;
+    it=new select_area;
     it->showMaximized();
 
 }

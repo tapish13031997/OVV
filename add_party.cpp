@@ -45,8 +45,15 @@ void add_party::on_submit_clicked()
     {
         query.prepare("insert into party values (:val1,:val2,0)");
 
+
         query.bindValue(":val1",p.Pid);
         query.bindValue(":val2",p.partyname);
+
+        query.exec();
+
+        query.prepare("insert into party_vote values (:val1,0)");
+
+        query.bindValue(":val1",p.Pid);
 
         query.exec();
 

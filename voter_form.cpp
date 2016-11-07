@@ -34,33 +34,40 @@ voter_form::~voter_form()
 void voter_form::on_submit_clicked()
 {
     voter v;
-    QSqlQuery query2;
+
     v.password=ui->password->text();
+
     QString repassword=ui->repassword->text();
+
     if(v.password!=repassword)
     {QMessageBox::information(this,"WARNING","Passwords do not match"); return;}
+
+
+
 
     v.name=ui->name->text();
 
     v.username=ui->username->text();
+
+
+
+
+
     if(ui->Male->isChecked())
         v.sex="M";
     else
         v.sex="F";
+
     QString temp;
     temp=ui->area->currentText();
-    if(ui->area->currentText().isEmpty())
-    {
-        QMessageBox inform;
-        inform.critical(this,"ERROR-510","Select Area !");
-        return ;
 
-    }
     QSqlQuery query;
 
     query.prepare("select areacode from area where areaname =:val");
     query.bindValue(":val",temp);
-    if(!query.exec())
+
+
+   if(!query.exec())
     qDebug()<<query.lastError();
 
     query.first();
@@ -74,87 +81,39 @@ void voter_form::on_submit_clicked()
     int y=a.month();
     int z=a.year();
 
-    v.DOB+=QString::number(x);
+    v.DOB+=QString::number(z);
     v.DOB+='-';
     v.DOB+=QString::number(y);
     v.DOB+='-';
-    v.DOB+=QString::number(z);
-query2.prepare("select * from voter where username = :val");
-query2.bindValue(":val",v.username);
-query2.exec();
-QDate aaj=QDate::currentDate();
-QStringList lst = v.DOB.split("-");
-int d = lst[0].toInt();
-int m=lst[1].toInt();
- y=lst[2].toInt();
-QDate age(y,m,d);
-if(v.name.isEmpty())
-{
-    QMessageBox inform;
-    inform.critical(this,"ERROR-500","Name field can not be empty");
-    return ;
-}
-else if(v.username.isEmpty())
-{
+    v.DOB+=QString::number(x);
 
-    QMessageBox inform;
-    inform.critical(this,"ERROR-500","Username field can not be empty");
-    return ;
 
-}
-else if(v.password.isEmpty())
-{
 
-    QMessageBox inform;
-    inform.critical(this,"ERROR-500","Password field can not be empty");
-    return ;
 
-}
-else if(v.phone.isEmpty())
-{
 
-    QMessageBox inform;
-    inform.critical(this,"ERROR-500","Phone Number MUST be provided");
-    return ;
-}
-else if(aaj.year()-age.year()<18 or (age.year()==aaj.year()+18 and age.month()>aaj.month()) or (age.year()==aaj.year()+18 and age.month()==aaj.month() and age.day()>aaj.day()) ) {
-    QMessageBox inform;
-    inform.critical(this,"ERROR-500","You must be 18 or above to become a voter");
-    return ;
-}
+    if(!query.exec("select max(Uid) from voter"))
+        qDebug()<<query.lastError();
 
-   else if(query2.first())
-    {
+    query.first();
+    v.Uid=query.value(0).toInt()+1;
 
-            QMessageBox inform;
-            inform.information(this,"ERROR","USERNAME ALREADY IN USE");
-            return ;
-    }
-    else
-    {
-        if(!query.exec("select max(Uid) from voter"))
-            qDebug()<<query.lastError();
+    v.insert_voter();
+  //  qDebug()<<v.Uid<<' '<<v.username<<' '<<v.password<<' '<<v.phone<<' '<<v.name<<endl;
 
-        query.first();
-        v.Uid=query.value(0).toInt()+1;
+    QString S;
+    S="Registration Successful\n";
+    S+="Your UID is ";
+    S+=QString::number(v.Uid);
+    S+="\nKindly keep this safe for future references";
+    QMessageBox::information(this,"SUCCESSFUL",S);
 
-        v.insert_voter();
-      //  qDebug()<<v.Uid<<' '<<v.username<<' '<<v.password<<' '<<v.phone<<' '<<v.name<<endl;
+    hide();
 
-        QString S;
-        S="Registration Successful\n";
-        S+="Your UID is ";
-        S+=QString::number(v.Uid);
-        S+="\nKindly keep this safe for future references";
-        QMessageBox::information(this,"SUCCESSFUL",S);
+    first_window *jt;
+    jt=new first_window(this);
+    jt->showMaximized();
 
-        hide();
-
-        first_window *jt;
-        jt=new first_window(this);
-        jt->showMaximized();
-    }
-
+    //qDebug()<<query.lastError();
 }
 
 void voter_form::on_cancel_clicked()

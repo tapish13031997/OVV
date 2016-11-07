@@ -6,15 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>693</width>
-    <height>359</height>
+    <width>694</width>
+    <height>571</height>
    </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active/>
+    <inactive/>
+    <disabled/>
+   </palette>
   </property>
   <property name="windowTitle">
    <string>OVS</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <property name="styleSheet">
-   <string notr="true">background-url:(/Downloads/Screenshot from 2016-03-23 10-10-47.png)</string>
+   <string notr="true">
+
+</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>27</width>
+    <height>24</height>
+   </size>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonTextOnly</enum>
@@ -26,8 +44,8 @@
    <widget class="QPushButton" name="login_button">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>70</y>
+      <x>360</x>
+      <y>380</y>
       <width>201</width>
       <height>81</height>
      </rect>
@@ -48,7 +66,17 @@
      <string notr="true">url:(/Downloads/Screenshot from 2016-03-23 10-10-47.png)</string>
     </property>
     <property name="text">
-     <string>LOGIN</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="src/files.qrc">
+      <normaloff>:/button_login.png</normaloff>:/button_login.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>201</width>
+      <height>81</height>
+     </size>
     </property>
     <property name="shortcut">
      <string>L</string>
@@ -57,29 +85,69 @@
    <widget class="QPushButton" name="register_button">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>70</y>
+      <x>620</x>
+      <y>380</y>
       <width>201</width>
       <height>81</height>
      </rect>
     </property>
     <property name="text">
-     <string>REGISTER</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="src/files.qrc">
+      <normaloff>:/button_register.png</normaloff>:/button_register.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>201</width>
+      <height>81</height>
+     </size>
     </property>
     <property name="shortcut">
      <string>R</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>693</width>
-     <height>19</height>
-    </rect>
-   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>70</y>
+      <width>871</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="src/files.qrc">:/OnlineVoting_Fotolia_1020.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>30</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Century Schoolbook L</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#5555ff;&quot;&gt;Online Voting System&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
@@ -87,6 +155,8 @@
   <tabstop>login_button</tabstop>
   <tabstop>register_button</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="src/files.qrc"/>
+ </resources>
  <connections/>
 </ui>

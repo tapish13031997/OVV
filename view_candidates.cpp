@@ -6,6 +6,7 @@
 #include "voter_welcome_window.h"
 #include "QMessageBox"
 #include "vote.h"
+#include <QDebug>
 view_candidates::view_candidates(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::view_candidates)
@@ -57,6 +58,8 @@ void view_candidates::on_pushButton_clicked()
  int Cid;
  s=it->text();
  Cid=s.toInt();
+
+ //qDebug()<<Cid;
  it=ui->tableWidget->item(row,1);
  s=it->text();
     s="Are you sure you want to vote "+s;
@@ -76,9 +79,9 @@ void view_candidates::on_pushButton_clicked()
 
             query2.prepare("insert into canvote values (:val1,1,:val2)");
             query2.bindValue(":val1",myuid);
-            qDebug()<<query2.lastQuery();
+           // qDebug()<<query2.lastQuery();
             query2.bindValue(":val2",v.areacode);
-            if(query2.exec())
+            if(!query2.exec())
                 qDebug()<<query2.lastQuery();
 
             v.Cid=Cid;

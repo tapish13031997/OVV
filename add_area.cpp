@@ -44,10 +44,15 @@ void add_area::on_submit_clicked()
     {
         query.prepare("insert into area values (:val1,0,:val2)");
 
+
         query.bindValue(":val1",a.areacode);
         query.bindValue(":val2",a.areaname);
 
 
+        query.exec();
+
+        query.prepare("insert into area_vote values(:val,0)");
+        query.bindValue(":val",a.areacode);
         query.exec();
 
         flag=true;

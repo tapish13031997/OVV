@@ -25,4 +25,10 @@ void candidate::insert_candidate()
 
     query.exec();
 
+    query.prepare("insert into candidate_vote values(:val1,:val2,0)");
+    query.bindValue(":val1",Cid);
+    query.bindValue(":val2",areacode);
+
+    query.exec();
+
 }

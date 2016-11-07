@@ -21,6 +21,8 @@ result_chart::~result_chart()
 
 void result_chart::paintEvent(QPaintEvent *)
 {
+
+
     QVector<QColor> v(12);
     v[0]=Qt::red,v[1]=Qt::blue,v[2]=Qt::green,v[3]=Qt::yellow,v[4]=Qt::magenta,v[5]=Qt::gray,v[6]=Qt::darkRed,v[7]=Qt::darkCyan,
             v[8]=Qt::darkBlue,v[9]=Qt::darkGreen,v[10]=Qt::darkMagenta,v[11]=Qt::darkYellow;
@@ -30,7 +32,7 @@ void result_chart::paintEvent(QPaintEvent *)
     QRectF size=QRectF(40,40,300,300);
 
     //painter.setBrush();
-    QLineEdit *myBtn[100]; QLabel *l[100];
+    QLineEdit *myBtn[100]; QLabel *l[100];QLabel *l2[100];
     /*myBtn=new QLineEdit(this);
 
     myBtn->setGeometry(400,40,20,20);
@@ -71,10 +73,14 @@ query.clear();
             query2.prepare("select votecount from candidate_vote where Cid=:val");
             query2.bindValue(":val",query.value(0).toInt());
 
+            //qDebug()<<query.value(0).toInt()<<" "<<;
+
             query2.exec();
 
             query2.first();
             angle=query2.value(0).toDouble()/total_votes*360;
+
+            qDebug()<<query.value(0).toInt()<<" "<<query2.value(0).toInt();
 
             end_angle=start_angle+angle;
 
@@ -98,8 +104,10 @@ query.clear();
             myBtn[i]->setDisabled(true);
 
             l[i]=new QLabel(this);
+            l2[i]=new QLabel(this);
 
             l[i]->setGeometry(430,cur,120,20);
+            l2[i]->setGeometry(560,cur,50,20);
 
             QSqlQuery queryi;
 
@@ -113,8 +121,10 @@ query.clear();
 
 
             l[i]->setText(queryi.value(0).toString());
+            l2[i]->setText(query.value(0).toString());
 
             l[i]->setVisible(true);
+            l2[i]->setVisible(true);
 
              i++;
             cur+=60;
