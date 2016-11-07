@@ -8,5 +8,10 @@
         <file>button_generate-result.png</file>
         <file>button_view-election-stats.png</file>
         <file>button_save-changes.png</file>
+        <file>button_login.png</file>
+        <file>button_register.png</file>
+        <file>OnlineVoting_Fotolia_1020.jpg</file>
+        <file>button_next.png</file>
+        <file>button_cancel.png</file>
     </qresource>
 </RCC>
