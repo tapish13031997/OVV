@@ -5,6 +5,7 @@
 #include "QLineEdit"
 #include "select_area.h"
 #include "admin.h"
+#include "manage_election.h"
 party_results::party_results(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::party_results)
@@ -121,4 +122,13 @@ void party_results::on_pushButton_clicked()
         select_area *it;
         it=new select_area;
         it->showMaximized();
+}
+
+void party_results::on_pushButton_2_clicked()
+{
+    hide();
+    Manage_Election *it;
+    it=new Manage_Election;
+     it->showFullScreen();
+
 }
