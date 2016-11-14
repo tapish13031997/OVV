@@ -5,7 +5,9 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT +=sql
+QT +=widgets
+QT +=core
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = ovv
@@ -16,22 +18,80 @@ SOURCES += main.cpp\
         mainwindow1.cpp \
     first_window.cpp \
     login_window.cpp \
-    voter_window.cpp \
+    candidate.cpp \
     area.cpp \
-    voter_form.cpp
+    voter.cpp \
+    voter_form.cpp \
+    admin.cpp \
+    manage_voter.cpp \
+    select_area.cpp \
+    manage_candidate.cpp \
+    add_candidate.cpp \
+    modify_candidate.cpp \
+    voter_welcome_window.cpp \
+    voter_window.cpp \
+    add_area.cpp \
+    add_party.cpp \
+    manage_parties.cpp \
+    manage_area.cpp \
+    view_candidates.cpp \
+    vote.cpp \
+    manage_election.cpp \
+    party_results.cpp \
+    result_chart.cpp \
+    view_stats.cpp
 
 HEADERS  += mainwindow1.h \
     first_window.h \
     login_window.h \
-    voter_window.h \
+    voter_form.h \
     area.h \
-    voter_form.h
+    candidate.h \
+    initdb.h \
+    voter.h \
+    admin.h \
+    manage_voter.h \
+    select_area.h \
+    manage_candidate.h \
+    add_candidate.h \
+    modify_candidate.h \
+    voter_welcome_window.h \
+    voter_window.h \
+    add_area.h \
+    add_party.h \
+    manage_parties.h \
+    party.h \
+    manage_area.h \
+    view_candidates.h \
+    vote.h \
+    election_time.h \
+    manage_election.h \
+    party_results.h \
+    result_chart.h \
+    view_stats.h
 
 FORMS    += mainwindow1.ui \
     first_window.ui \
     login_window.ui \
+    voter_form.ui \
+    admin.ui \
+    manage_voter.ui \
+    select_area.ui \
+    manage_candidate.ui \
+    add_candidate.ui \
+    modify_candidate.ui \
+    voter_welcome_window.ui \
     voter_window.ui \
-    voter_form.ui
+    add_area.ui \
+    add_party.ui \
+    manage_parties.ui \
+    manage_area.ui \
+    view_candidates.ui \
+    manage_election.ui \
+    graph.ui \
+    party_results.ui \
+    result_chart.ui \
+    view_stats.ui
 
 RESOURCES += \
     src/files.qrc

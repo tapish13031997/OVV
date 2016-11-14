@@ -5,15 +5,10 @@
 class area
 {
     public:
-    long long Uid;
-        QString username;
-        QString password;
-        QString name[1000];
-        QString address[1000];
-        QString sex;
-        QString DOB;
-        long long phone;
-        void insert_area(area &B);
+    int areacode;
+    int population;
+    QString areaname;
 };
+extern area A;
 
 #endif // AREA_H

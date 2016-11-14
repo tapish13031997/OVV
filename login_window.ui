@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>425</width>
-    <height>187</height>
+    <width>822</width>
+    <height>653</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,56 +23,59 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>9</y>
-      <width>62</width>
+      <x>440</x>
+      <y>410</y>
+      <width>91</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Username</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Username&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="Username_lineEdit">
     <property name="geometry">
      <rect>
-      <x>77</x>
-      <y>9</y>
-      <width>125</width>
-      <height>22</height>
+      <x>540</x>
+      <y>410</y>
+      <width>141</width>
+      <height>31</height>
      </rect>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>37</y>
-      <width>57</width>
+      <x>440</x>
+      <y>460</y>
+      <width>81</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Password</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="password_lineEdit">
     <property name="geometry">
      <rect>
-      <x>77</x>
-      <y>37</y>
-      <width>125</width>
-      <height>22</height>
+      <x>540</x>
+      <y>450</y>
+      <width>141</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="login_button">
     <property name="geometry">
      <rect>
-      <x>77</x>
-      <y>65</y>
-      <width>80</width>
-      <height>22</height>
+      <x>540</x>
+      <y>500</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="mouseTracking">
@@ -85,10 +88,86 @@
      <string notr="true">color :rgb(47, 137, 255)</string>
     </property>
     <property name="text">
-     <string>LOGIN</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="src/files.qrc">
+      <normaloff>:/button_login.png</normaloff>:/button_login.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>101</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="shortcut">
+     <string>Return</string>
     </property>
     <property name="checkable">
      <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>580</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="src/files.qrc">
+      <normaloff>:/back-button.png</normaloff>:/back-button.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>70</width>
+      <height>80</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>70</y>
+      <width>871</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="src/files.qrc">:/OnlineVoting_Fotolia_1020.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>20</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Century Schoolbook L</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#5555ff;&quot;&gt;Online Voting System&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
@@ -99,6 +178,8 @@
   <tabstop>password_lineEdit</tabstop>
   <tabstop>login_button</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="src/files.qrc"/>
+ </resources>
  <connections/>
 </ui>

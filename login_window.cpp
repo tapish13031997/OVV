@@ -1,6 +1,11 @@
-#include "login_window.h"
+#include <first_window.h>
 #include "ui_login_window.h"
 #include <QMessageBox>
+#include "initdb.h"
+#include "admin.h"
+#include "login_window.h"
+#include "voter_welcome_window.h"
+QString name;
 login_window::login_window(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::login_window)
@@ -15,21 +20,50 @@ login_window::~login_window()
 
 bool login_window::check(const QString &username,const QString &password)
 {
-    if(username=="T"&&password=="S")
-    return true;
+    if(username=="ADMIN")
+    {
+        if(password=="root")
+        {
+            return 1;
+        }
+        return 0;
+    }
+    QSqlQuery query3;
+    query3.prepare("select * from voter");
+    query3.exec();
+    while(query3.next())
+    {
+    if(query3.value(1).toString()==username && query3.value(2).toString()==password)
+    {
+        return true;
+    }
+}
+return false;
 }
 int login_window::login()
 {
-    QString username,password;
-    vptr=new voter_window(this);
-
     username=ui->Username_lineEdit->text();
     password=ui->password_lineEdit->text();
+     //QMessageBox messageBox;
+    //messageBox.critical(0,"Error",username);
     if(check(username,password))
     {
          hide();
-        vptr->showMaximized();
-        return 1;
+         name=username;
+         if(username=="ADMIN")
+         {
+             admin *aptr;
+          aptr=new admin(this);
+          aptr->showMaximized();
+         }
+         else
+         {
+             hide();
+            voter_welcome_window * vwwptr;
+         vwwptr=new voter_welcome_window(this);
+         vwwptr->showMaximized();
+        }
+                return 1;
 
     }
     else
@@ -53,3 +87,12 @@ void login_window::on_login_button_clicked()
 }
 
 
+
+void login_window::on_commandLinkButton_clicked()
+{
+
+    first_window * fwptr;
+    fwptr=new first_window(this);
+        hide();
+        fwptr->showMaximized();
+}
