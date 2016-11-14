@@ -55,13 +55,25 @@ void manage_voter::on_pushButton_clicked()
  QTableWidgetItem *it;
  it=ui->tableWidget->item(row,0);
  QString s;
- int uid;
+ int uid,areacode;
  s=it->text();
  uid=s.toInt();
 QSqlQuery query;
-query.prepare("delete from voter where uid = :val");
+query.prepare("select areacode from voter where uid = :val");
 query.bindValue(":val",uid);
 
+if(!query.exec())
+{
+    QMessageBox inform;
+    inform.critical(0,"ERROR","CONTACT ADMIN");
+}
+else
+{
+   areacode=query.value(0).toInt();
+}
+query.clear();
+query.prepare("delete from voter where uid = :val");
+query.bindValue(":val",uid);
 if(!query.exec())
 {
     QMessageBox inform;
@@ -72,7 +84,16 @@ else
     QMessageBox inform;
     inform.information(0,"REMOVED","Voter "+s);
     ui->tableWidget->removeRow(row);
+    QSqlQuery query2;
+   query2.prepare("update area set population = population -1 where areacode = :val ");
+   query2.bindValue(":val",areacode);
+   if(!query.exec())
+   {
+       QMessageBox inform;
+       inform.critical(0,"ERROR","CONTACT ADMIN");
+   }
 }
+
 hide();
     manage_voter *mvptr;
     mvptr=new manage_voter(this);

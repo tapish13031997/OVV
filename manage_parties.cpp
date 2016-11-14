@@ -58,7 +58,7 @@ void manage_parties::on_delete_party_clicked()
 
     QString t=it->text();
 
-
+int Pid;
     QMessageBox::StandardButton reply;
 
     QString s="Are you sure you want to remove "+t+" from the party list";
@@ -69,13 +69,40 @@ void manage_parties::on_delete_party_clicked()
     {
 
     QSqlQuery query;
+       query.prepare("select Pid from party where partyname = :val1");
 
+       query.bindValue(":val1",t);
+
+       if(!query.exec())
+       {
+           QMessageBox info;
+           info.critical(0,"ERROR 4045","CONTACT ADMIN");
+
+       }
+       query.first();
+Pid=query.value(0).toInt();
+query.clear();
     query.prepare("delete from party where partyname = :val1");
 
     query.bindValue(":val1",t);
 
-    query.exec();
-
+   if(! query.exec())
+   {
+       QMessageBox info;
+       info.critical(0,"ERROR 404","CONTACT ADMIN");
+   }
+query.clear();
+query.prepare("delete from party_vote where Pid = :val");
+query.bindValue(":val",Pid);
+if(! query.exec())
+{
+    QMessageBox info;
+    info.critical(0,"ERROR 4046","CONTACT ADMIN");
+}
+query.clear();
+query.prepare("delete from candidate where party = :val");
+query.bindValue(":val",t);
+query.exec();
     hide();
 
     manage_parties *iti;

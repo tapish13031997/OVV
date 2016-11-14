@@ -91,6 +91,9 @@ void modify_candidate::on_modify_clicked()
 
     if(reply== QMessageBox::Yes)
     {
+            QSqlQuery query2;
+        query2.prepare("delete from candidate_vote where Cid =:val ");
+        query2.bindValue(":val",Ctemp.Cid);
             query.prepare("delete from candidate where areacode = :val1 and name = :val2");
 
             query.bindValue(":val1",A.areacode);
