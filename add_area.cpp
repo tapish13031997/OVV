@@ -69,9 +69,10 @@ void add_area::on_submit_clicked()
         manage_area *it;
         it=new manage_area(this);
         it->showMaximized();
+
+        hide();
     }
 
-    hide();
 }
 
 void add_area::on_back_clicked()

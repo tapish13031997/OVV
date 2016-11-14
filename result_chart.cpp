@@ -121,7 +121,7 @@ query.clear();
 
 
             l[i]->setText(queryi.value(0).toString());
-            l2[i]->setText(query.value(0).toString());
+            l2[i]->setText(query2.value(0).toString());
 
             l[i]->setVisible(true);
             l2[i]->setVisible(true);

@@ -7,7 +7,7 @@
 #include "QDate"
 #include "voter_form.h"
 voter v;
-void voter::insert_voter()
+void voter::insert_voter(int flag)
 {
 
 
@@ -31,13 +31,16 @@ void voter::insert_voter()
        inform.critical(0,"ERROR","CONTACT ADMIN");
    }
     query.clear();
-    query.prepare("update area set population = population +1 where areacode = :val ");
-    query.bindValue(":val",areacode);
-    if(!query.exec())
+    if(flag)
     {
+        query.prepare("update area set population = population +1 where areacode = :val ");
+        query.bindValue(":val",areacode);
+        if(!query.exec())
+        {
 
-        QMessageBox inform;
-        inform.critical(0,"ERROR","CONTACT ADMIN");
+            QMessageBox inform;
+            inform.critical(0,"ERROR","CONTACT ADMIN");
+        }
     }
 
 }

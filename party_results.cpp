@@ -132,3 +132,4 @@ void party_results::on_pushButton_2_clicked()
      it->showFullScreen();
 
 }
+

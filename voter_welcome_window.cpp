@@ -28,7 +28,16 @@ voter_welcome_window::voter_welcome_window(QWidget *parent) :
     ui->setupUi(this);
     ui->lineEdit->setText(name);//name is actually username not name;
 int var_tapish=0;
-        //qDebug()<<start_time.samay.date().day()<<" "<<start_time.samay.date().month()<<" "<<start_time.samay.date().year();
+QSqlQuery query4;
+query4.exec("select * from TIMER");
+if(query4.first())
+{
+       start_time.samay= QDateTime(query4.value(0).toDate(),QTime(query4.value(1).toInt(),query4.value(2).toInt(),query4.value(3).toInt()));
+       query4.next();
+       end_time.samay= QDateTime(query4.value(0).toDate(),QTime(query4.value(1).toInt(),query4.value(2).toInt(),query4.value(3).toInt()));
+
+}
+//qDebug()<<start_time.samay.date().day()<<" "<<start_time.samay.date().month()<<" "<<start_time.samay.date().year();
 
         if((start_time.samay.date() > QDate::currentDate()) or (start_time.samay.date() ==QDate::currentDate() and start_time.samay.time() > QTime::currentTime()))
         {

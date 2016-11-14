@@ -14,7 +14,7 @@ public:
    QString DOB;//6
    QString phone;//7
 
-   void insert_voter();
+   void insert_voter(int flag);
 
 };
 extern voter v,temp;

@@ -162,6 +162,12 @@ else if(v.username.isEmpty())
     return ;
 
 }
+else if(v.username=="ADMIN")
+{
+    QMessageBox inform;
+    inform.information(this,"ERROR","USERNAME ALREADY IN USE");
+    return ;
+}
 else if(v.password.isEmpty())
 {
 
@@ -200,7 +206,7 @@ else
             QMessageBox info;
             info.critical(0,"ERROR 404","CONTACT ADMIN");
     }
-     v.insert_voter();
+     v.insert_voter(0);
     QString S;
     S="Registration Successful\n";
     S+="Your UID is ";

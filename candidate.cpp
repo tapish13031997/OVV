@@ -20,10 +20,10 @@ void candidate::insert_candidate()
 
     query.exec();
 
-    query.prepare("insert into vote values(:val1,0)");
-    query.bindValue(":val1",Cid);
+//    query.prepare("insert into vote values(:val1,0)");
+//    query.bindValue(":val1",Cid);
 
-    query.exec();
+//    query.exec();
 
     query.prepare("insert into candidate_vote values(:val1,:val2,0)");
     query.bindValue(":val1",Cid);

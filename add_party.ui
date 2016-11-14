@@ -48,10 +48,6 @@
    <property name="text">
     <string>Back</string>
    </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>src/back-button.png</normaloff>src/back-button.png</iconset>
-   </property>
    <property name="iconSize">
     <size>
      <width>80</width>

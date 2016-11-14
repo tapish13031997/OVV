@@ -7,6 +7,7 @@ first_window::first_window(QWidget *parent) :
     ui(new Ui::first_window)
 {
     ui->setupUi(this);
+    ui->login_button->setFocus();
 }
 
 first_window::~first_window()
