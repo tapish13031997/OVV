@@ -13,9 +13,5 @@
         <file>OnlineVoting_Fotolia_1020.jpg</file>
         <file>button_next.png</file>
         <file>button_cancel.png</file>
-        <file>button_welcome-admin.png</file>
-        <file>button.png</file>
-        <file>button_back.png</file>
-        <file>button_back (1).png</file>
     </qresource>
 </RCC>
