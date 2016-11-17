@@ -14,8 +14,26 @@
         <file>button_next.png</file>
         <file>button_cancel.png</file>
         <file>button_welcome-admin.png</file>
-        <file>button.png</file>
+        <file>button_manage-voting-areas.png</file>
+        <file>button_manage-voter-list.png</file>
+        <file>button_manage-elections.png</file>
+        <file>button_manage-election-parties.png</file>
+        <file>button_manage-candidates.png</file>
+        <file>VOTE-Banner-Large-2.jpg</file>
+        <file>button_modify.png</file>
+        <file>button_remove.png</file>
+        <file>button_add-new.png</file>
+        <file>elections_ahead_sky_0.jpg</file>
         <file>button_back.png</file>
-        <file>button_back (1).png</file>
+        <file>button_submit.png</file>
+        <file>election_2016_1.jpg</file>
+        <file>button_remove_area.png</file>
+        <file>button_add-area.png</file>
+        <file>button_add-party.png</file>
+        <file>1595443_1280x720.jpg</file>
+        <file>button_areawise-results.png</file>
+        <file>Document.jpg</file>
+        <file>button_logout.png</file>
+        <file>maxresdefault.jpg</file>
     </qresource>
 </RCC>
