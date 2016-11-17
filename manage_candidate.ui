@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>722</width>
-    <height>511</height>
+    <width>867</width>
+    <height>706</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,56 +16,84 @@
   <widget class="QPushButton" name="remove">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>380</y>
+     <x>370</x>
+     <y>569</y>
      <width>161</width>
-     <height>31</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Remove</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="src/files.qrc">
+     <normaloff>:/button_remove.png</normaloff>:/button_remove.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>161</width>
+     <height>41</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="modify">
    <property name="geometry">
     <rect>
-     <x>319</x>
-     <y>380</y>
+     <x>529</x>
+     <y>569</y>
      <width>161</width>
-     <height>31</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Modify Credentials</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="src/files.qrc">
+     <normaloff>:/button_modify.png</normaloff>:/button_modify.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>161</width>
+     <height>41</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="insert_candidate">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>440</y>
-     <width>181</width>
-     <height>31</height>
+     <x>450</x>
+     <y>650</y>
+     <width>161</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Add New</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="src/files.qrc">
+     <normaloff>:/button_add-new.png</normaloff>:/button_add-new.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>201</width>
+     <height>51</height>
+    </size>
    </property>
   </widget>
   <widget class="QListWidget" name="candidate_name">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>80</y>
+     <x>420</x>
+     <y>269</y>
      <width>161</width>
      <height>301</height>
     </rect>
    </property>
-   <item>
-    <property name="text">
-     <string>Select Candidate</string>
-    </property>
-   </item>
+   <property name="styleSheet">
+    <string notr="true">font: 75 12pt &quot;Century Schoolbook L&quot;;</string>
+   </property>
   </widget>
   <widget class="QListWidget" name="candidate_party">
    <property name="enabled">
@@ -73,17 +101,15 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>80</y>
+     <x>580</x>
+     <y>269</y>
      <width>111</width>
      <height>301</height>
     </rect>
    </property>
-   <item>
-    <property name="text">
-     <string>Party</string>
-    </property>
-   </item>
+   <property name="styleSheet">
+    <string notr="true">font: 75 12pt &quot;Century Schoolbook L&quot;;</string>
+   </property>
   </widget>
   <widget class="QListWidget" name="cid">
    <property name="enabled">
@@ -91,32 +117,96 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>80</y>
+     <x>370</x>
+     <y>269</y>
      <width>51</width>
      <height>301</height>
     </rect>
    </property>
-   <item>
-    <property name="text">
-     <string>CID</string>
-    </property>
-   </item>
+   <property name="styleSheet">
+    <string notr="true">font: 75 12pt &quot;Century Schoolbook L&quot;;</string>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectColumns</enum>
+   </property>
+   <property name="batchSize">
+    <number>103</number>
+   </property>
   </widget>
-  <widget class="QCommandLinkButton" name="commandLinkButton">
+  <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>430</y>
-     <width>131</width>
+     <x>370</x>
+     <y>240</y>
+     <width>51</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 12pt &quot;Century Schoolbook L&quot;;</string>
+   </property>
    <property name="text">
-    <string>GO BACK</string>
+    <string>CID</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>240</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 12pt &quot;Century Schoolbook L&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Name</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>240</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 12pt &quot;Century Schoolbook L&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Party</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="commandLinkButton">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>140</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="src/files.qrc">
+     <normaloff>:/back-button.png</normaloff>:/back-button.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>141</width>
+     <height>51</height>
+    </size>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="src/files.qrc"/>
+ </resources>
  <connections/>
 </ui>

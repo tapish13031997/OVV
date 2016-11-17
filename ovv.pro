@@ -95,3 +95,11 @@ FORMS    += mainwindow1.ui \
 
 RESOURCES += \
     src/files.qrc
+
+DISTFILES += \
+    src/button_welcome-admin.png \
+    src/button_manage-voting-areas.png \
+    src/button_manage-voter-list.png \
+    src/button_manage-elections.png \
+    src/button_manage-election-parties.png \
+    src/button_manage-candidates.png

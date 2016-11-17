@@ -52,11 +52,26 @@ void manage_voter::on_pushButton_clicked()
 {
 
     int row=ui->tableWidget->currentRow();
- QTableWidgetItem *it;
+ QTableWidgetItem *it,*jt;
  it=ui->tableWidget->item(row,0);
+ jt=ui->tableWidget->item(row,1);
  QString s;
  int uid,areacode;
  s=it->text();
+ //QListWidgetItem *it= ui->candidate_name->currentItem();
+
+ QString t=jt->text();
+
+
+ QMessageBox::StandardButton reply;
+
+ QString s2="Are you sure you want to remove "+t+" from the voter list";
+
+ reply=QMessageBox::question(this,"CONFIRM",s2,QMessageBox::Yes|QMessageBox::No);
+
+ if(reply== QMessageBox::Yes)
+ {
+
  uid=s.toInt();
 QSqlQuery query;
 query.prepare("select areacode from voter where uid = :val");
@@ -82,7 +97,7 @@ if(!query.exec())
 else
 {
     QMessageBox inform;
-    inform.information(0,"REMOVED","Voter "+s);
+    inform.information(0,"REMOVED","Voter "+t);
     ui->tableWidget->removeRow(row);
     QSqlQuery query2;
    query2.prepare("update area set population = population -1 where areacode = :val ");
@@ -92,6 +107,8 @@ else
        QMessageBox inform;
        inform.critical(0,"ERROR","CONTACT ADMIN");
    }
+
+  }
 }
 
 hide();

@@ -13,7 +13,7 @@ view_stats::view_stats(QWidget *parent) :
     query1.exec("select areacode,areaname from area");
     QProgressBar * qpb[1000];
     QLabel * ql[1000];
-    int i=0,x=10,y=100;
+    int i=0,x=200,y=80;
     while(query1.next())
     {
             qpb[i]=new QProgressBar(this);
@@ -35,15 +35,17 @@ view_stats::view_stats(QWidget *parent) :
                     //code for qlable
                ql[i]=new QLabel(this);
                ql[i]->setText(query1.value(1).toString());
-               ql[i]->setGeometry(x,y,100,20);
+              // ql[i]->setFont("Courier");
+              // ql[i]->setTextFormat();
+               ql[i]->setGeometry(x,y,220,20);
 
 
 
                //code ends
             qpb[i]->setValue(percentage);
                 qpb[i]->setVisible(true);
-                qpb[i]->setGeometry(x+110,y,200,20);
-            y+=40;
+                qpb[i]->setGeometry(x+350,y,400,30);
+            y+=60;
         i++;
     }
 

@@ -19,9 +19,12 @@
      <rect>
       <x>130</x>
       <y>10</y>
-      <width>241</width>
+      <width>921</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;Century Schoolbook L&quot;;</string>
     </property>
     <property name="text">
      <string>             VOTING STATISTICS</string>

@@ -1,0 +1,2 @@
+changed ADMIN.ui->edit home key
+CHanged voter_form.h and voter_form.cpp

@@ -39,15 +39,16 @@ if(query4.first())
 }
 //qDebug()<<start_time.samay.date().day()<<" "<<start_time.samay.date().month()<<" "<<start_time.samay.date().year();
 
-        if((start_time.samay.date() > QDate::currentDate()) or (start_time.samay.date() ==QDate::currentDate() and start_time.samay.time() > QTime::currentTime()))
+        if((start_time.samay.date() > QDate::currentDate())  or (start_time.samay.date() ==QDate::currentDate() and start_time.samay.time() > QTime::currentTime()))
         {
             ui->start_end->setText("Election Starts in");
             ui->pushButton_3->setDisabled(true);
                     fag=false;
 
         }
-        else if(start_time.samay.date() ==QDate::currentDate() and end_time.samay.time() > QTime::currentTime())
-            {
+        else if(((start_time.samay.date() <QDate::currentDate() or start_time.samay.date()==QDate::currentDate() ) and ((end_time.samay.date() ==QDate::currentDate()and end_time.samay.time() > QTime::currentTime())or(end_time.samay.date() >QDate::currentDate() ))) or((start_time.samay.date() ==QDate::currentDate() and end_time.samay.date() >QDate::currentDate() and start_time.samay.time() > QTime::currentTime())) or (start_time.samay.date() ==QDate::currentDate() and end_time.samay.time() > QTime::currentTime()))
+        //else if( end_time.samay.time()>QTime::currentTime())
+        {
                 ui->start_end->setText("Election Ends in");
 
 

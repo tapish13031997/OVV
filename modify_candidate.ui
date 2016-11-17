@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>727</width>
+    <width>937</width>
     <height>510</height>
    </rect>
   </property>
@@ -16,11 +16,14 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>10</y>
+     <x>431</x>
+     <y>139</y>
      <width>141</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 12pt &quot;Century Schoolbook L&quot;;</string>
    </property>
    <property name="text">
     <string>Modify Details</string>
@@ -29,14 +32,14 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>120</y>
+     <x>521</x>
+     <y>249</y>
      <width>120</width>
      <height>81</height>
     </rect>
    </property>
    <property name="title">
-    <string>GroupBox</string>
+    <string/>
    </property>
    <widget class="QRadioButton" name="female">
     <property name="geometry">
@@ -71,8 +74,8 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>140</y>
+     <x>431</x>
+     <y>269</y>
      <width>59</width>
      <height>14</height>
     </rect>
@@ -84,8 +87,8 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>210</y>
+     <x>431</x>
+     <y>339</y>
      <width>91</width>
      <height>16</height>
     </rect>
@@ -97,8 +100,8 @@
   <widget class="QDateEdit" name="dob">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>210</y>
+     <x>521</x>
+     <y>339</y>
      <width>131</width>
      <height>23</height>
     </rect>
@@ -110,8 +113,8 @@
   <widget class="QPushButton" name="modify">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>250</y>
+     <x>521</x>
+     <y>379</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -133,8 +136,8 @@
   <widget class="QPushButton" name="cancel">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>250</y>
+     <x>691</x>
+     <y>379</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -156,8 +159,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>50</y>
+     <x>431</x>
+     <y>179</y>
      <width>341</width>
      <height>24</height>
     </rect>
@@ -178,8 +181,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>251</x>
-     <y>91</y>
+     <x>432</x>
+     <y>220</y>
      <width>82</width>
      <height>16</height>
     </rect>
@@ -191,8 +194,8 @@
   <widget class="QComboBox" name="party">
    <property name="geometry">
     <rect>
-     <x>339</x>
-     <y>91</y>
+     <x>520</x>
+     <y>220</y>
      <width>181</width>
      <height>22</height>
     </rect>
@@ -202,6 +205,25 @@
      <string>Select Party</string>
     </property>
    </item>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>160</y>
+     <width>301</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="src/files.qrc">:/elections_ahead_sky_0.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
   </widget>
  </widget>
  <resources>
